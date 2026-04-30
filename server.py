@@ -15,8 +15,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from typing import Any
 
 
-APP_DATA_DIR = "/data/app_data"
-APP_ARCHIVE_DIR = "/data/app_archive"
+APP_DATA_DIR = os.environ.get("OPENHOST_APP_DATA_DIR", "/data/app_data")
+APP_ARCHIVE_DIR = os.environ.get("OPENHOST_APP_ARCHIVE_DIR", "/data/app_archive")
 
 
 def _stat_dir(path: str) -> dict[str, Any]:
