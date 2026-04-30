@@ -1,0 +1,20 @@
+[app]
+name = "archive-probe"
+version = "0.1.0"
+description = "Test app that exercises the app_archive bind mount"
+
+[runtime.container]
+image = "Dockerfile"
+port = 8080
+
+[resources]
+memory_mb = 128
+cpu_millicores = 100
+
+[data]
+app_data = true
+app_archive = true
+
+[routing]
+health_check = "/"
+public_paths = ["/"]
